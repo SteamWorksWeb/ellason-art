@@ -22,9 +22,11 @@ export default buildConfig({
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'fallback-secret-for-development-only',
+
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
-    },
+      family: 4,
+    } as any,
   }),
 });
