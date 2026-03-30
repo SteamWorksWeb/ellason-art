@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}

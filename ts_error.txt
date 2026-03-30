@@ -1,0 +1,3 @@
+app/(frontend)/about/page.tsx(4,27): error TS2307: Cannot find module '../../payload.config' or its corresponding type declarations.
+app/(frontend)/commissions/page.tsx(3,27): error TS2307: Cannot find module '../../payload.config' or its corresponding type declarations.
+app/(frontend)/contact/page.tsx(2,27): error TS2307: Cannot find module '../../payload.config' or its corresponding type declarations.
