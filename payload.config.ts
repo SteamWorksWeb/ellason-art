@@ -3,6 +3,10 @@ import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dns from 'node:dns';
+
+// This forces Next.js workers to strictly use IPv4, bypassing the Vercel crash.
+dns.setDefaultResultOrder('ipv4first');
 
 import { Users } from './collections/Users';
 import { Pages } from './collections/Pages';
@@ -22,11 +26,9 @@ export default buildConfig({
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'fallback-secret-for-development-only',
-
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
-      family: 4,
-    } as any,
+    },
   }),
 });
