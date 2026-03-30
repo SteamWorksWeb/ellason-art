@@ -22,9 +22,9 @@ export default buildConfig({
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'fallback-secret-for-development-only',
-  db: sqliteAdapter({
-    client: {
-      url: 'file:./payload.db',
-    }
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.DATABASE_URI || '',
+    },
   }),
 });
