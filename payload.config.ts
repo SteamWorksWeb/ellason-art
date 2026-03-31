@@ -28,5 +28,6 @@ export default buildConfig({
       family: 4,
       max: 2,
     } as any,
+    push: true, // <--- ADD THIS EXACT LINE
   }),
 });
