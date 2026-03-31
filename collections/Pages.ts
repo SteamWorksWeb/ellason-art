@@ -196,6 +196,14 @@ export const Pages: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
   },
+  hooks: {
+    beforeChange: [
+      ({ data, req, operation }) => {
+        console.log(`[Hooks] Initiating '${operation}' operation on Pages document: "${data.title}"... Checking database pool...`);
+        return data;
+      }
+    ],
+  },
   fields: [
     {
       name: 'title',
