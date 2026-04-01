@@ -3,6 +3,8 @@ import configPromise from '../../../payload.config';
 import React from 'react';
 import ContactForm from './ContactForm';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ContactPage() {
   const payload = await getPayload({ config: configPromise });
   const pagesQuery = await payload.find({ collection: 'pages', where: { title: { equals: 'Contact' } } });

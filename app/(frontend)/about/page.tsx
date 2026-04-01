@@ -124,6 +124,8 @@ const BottomCTASection = (props: any) => {
   );
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function AboutPage() {
   const payload = await getPayload({ config: configPromise });
   const pagesQuery = await payload.find({ collection: 'pages', where: { title: { equals: 'About' } } });

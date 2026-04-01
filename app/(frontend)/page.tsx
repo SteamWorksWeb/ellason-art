@@ -232,6 +232,8 @@ const TrustElementsSection = (props: any) => {
 // PAGE COMPONENT
 // ========================
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const payload = await getPayload({ config: configPromise });
   
