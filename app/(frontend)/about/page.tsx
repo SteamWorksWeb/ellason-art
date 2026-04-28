@@ -103,19 +103,19 @@ const BottomCTASection = (props: any) => {
   const btn2L = props.secondaryButtonLink || '/commissions';
 
   return (
-    <section className="bg-sand-light/10 py-32 px-6 text-center border-t border-brandYellow/10">
+    <section className="bg-brand-blue py-32 px-6 text-center">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-4xl lg:text-4xl font-serif font-light text-neutral-900 mb-6 tracking-tight">
+        <h2 className="text-4xl lg:text-4xl font-serif font-light text-cream-100 mb-6 tracking-tight">
           {headline}
         </h2>
-        <p className="text-lg text-neutral-600 font-light leading-relaxed mb-12 max-w-lg mx-auto">
+        <p className="text-lg text-blue-100/80 font-light leading-relaxed mb-12 max-w-lg mx-auto">
           {desc}
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Link href={btn1L} className="w-full sm:w-auto px-10 py-4 bg-brandYellow hover:bg-brandYellow-dark text-white font-semibold text-xs tracking-[0.15em] uppercase transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandYellow">
+          <Link href={btn1L} className="w-full sm:w-auto px-10 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md focus:outline-none rounded-none">
             {btn1}
           </Link>
-          <Link href={btn2L} className="w-full sm:w-auto px-10 py-4 border border-brandYellow text-brandYellow font-bold bg-white/50 hover:bg-brandYellow hover:text-white text-xs tracking-[0.15em] uppercase transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandYellow">
+          <Link href={btn2L} className="w-full sm:w-auto px-10 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md focus:outline-none rounded-none">
             {btn2}
           </Link>
         </div>

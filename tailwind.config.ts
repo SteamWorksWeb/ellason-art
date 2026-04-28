@@ -31,8 +31,11 @@ const config: Config = {
           dark: '#6E5114',
         },
         // ── Design System Palette ─────────────────────────────────────────
-        // Soft pastel accent (legacy alias kept for backwards compatibility)
-        'butter-yellow': '#F7E7A9',
+        // Butter Yellow — primary button color (source of truth: #f7e7a9)
+        'butter-yellow': {
+          DEFAULT: '#f7e7a9',  // ← exact spec value
+          hover:   '#e6d598',  // ← darkened 7% for hover states
+        },
         // Blues
         'brand-blue': {
           light: '#769ed1',   // Light Blue

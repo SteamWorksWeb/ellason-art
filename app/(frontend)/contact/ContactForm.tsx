@@ -113,7 +113,7 @@ export default function ContactForm(props: any) {
             </div>
 
             <div className="pt-8">
-              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-brand-blue hover:bg-brand-blue-light text-cream-50 font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue rounded-sm">
+              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md focus:outline-none rounded-none">
                 Send Message
               </button>
             </div>

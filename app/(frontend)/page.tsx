@@ -70,7 +70,7 @@ const HeroSection = (props: any) => {
           <Link href={btn1Link} className="px-8 py-3.5 bg-cream-50 text-neutral-900 text-xs tracking-widest uppercase hover:bg-white transition-colors shadow-lg rounded-sm">
             {btn1Text}
           </Link>
-          <Link href={btn2Link} className="px-8 py-3.5 bg-brand-yellow-warm text-neutral-900 text-xs tracking-widest uppercase hover:brightness-105 transition-all shadow-lg rounded-sm font-semibold">
+          <Link href={btn2Link} className="px-8 py-3.5 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-widest uppercase transition-colors shadow-lg rounded-none">
             {btn2Text}
           </Link>
         </div>
@@ -169,7 +169,7 @@ const AboutPreviewSection = (props: any) => {
           <p className="text-neutral-600 mb-12 leading-relaxed font-light">
             {desc}
           </p>
-            <Link href={btnLink} className="inline-block border border-neutral-800 px-8 py-3.5 text-xs tracking-[0.15em] uppercase hover:bg-neutral-800 hover:text-cream-50 transition-colors">
+            <Link href={btnLink} className="inline-block bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold px-8 py-3.5 text-xs tracking-[0.15em] uppercase transition-colors rounded-none">
             {btnText}
           </Link>
         </div>
@@ -196,7 +196,7 @@ const CommissionsSection = (props: any) => {
         <p className="text-lg text-blue-100/80 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
           {desc}
         </p>
-        <Link href={btnLink} className="inline-block px-10 py-4 bg-brand-yellow-warm hover:brightness-105 text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md rounded-sm">
+        <Link href={btnLink} className="inline-block px-10 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md rounded-none">
           {btnText}
         </Link>
       </div>
