@@ -43,6 +43,7 @@ export default function RootLayout({
               <Link href="/shop" className="hover:text-foreground transition-colors">Shop</Link>
               <Link href="/commissions" className="hover:text-foreground transition-colors">Commissions</Link>
               <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
+              <Link href="/reviews" className="hover:text-foreground transition-colors">Reviews</Link>
               <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
             </nav>
 
@@ -50,7 +51,7 @@ export default function RootLayout({
             <div className="flex items-center">
               <Link 
                 href="/commissions#start" 
-                className="hidden sm:inline-block px-7 py-3 bg-brandYellow text-white text-xs tracking-[0.15em] uppercase font-medium hover:bg-brandYellow-dark hover:shadow-lg transition-all duration-300 rounded-sm"
+                className="hidden sm:inline-block px-7 py-3 bg-butter-yellow text-neutral-900 text-xs tracking-[0.15em] uppercase font-medium hover:bg-brandYellow hover:text-white hover:shadow-lg transition-all duration-300 rounded-sm"
               >
                 Start a Commission
               </Link>
@@ -69,22 +70,59 @@ export default function RootLayout({
 
         {/* Minimal Global Footer */}
         <footer className="bg-foreground text-cream-100 py-16 mt-auto">
-          <div className="max-w-[1536px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <div>
-              <h3 className="text-xl font-serif tracking-widest uppercase mb-4">Ellason Art</h3>
-              <p className="text-sm font-light tracking-wide text-sand opacity-80 max-w-sm">
-                Creating coastal, airy, and elevated fine art that brings the serenity of the shoreline into your space.
+          <div className="max-w-[1536px] mx-auto px-6 lg:px-12">
+
+            {/* Main footer row */}
+            <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 text-center md:text-left">
+              
+              {/* Brand copy */}
+              <div>
+                <h3 className="text-xl font-serif tracking-widest uppercase mb-4">Ellason Art</h3>
+                <p className="text-sm font-light tracking-wide text-sand opacity-80 max-w-sm">
+                  Creating coastal, airy, and elevated fine art that brings the serenity of the shoreline into your space.
+                </p>
+              </div>
+
+              {/* Navigation links */}
+              <div className="flex gap-8 text-xs tracking-[0.2em] uppercase text-sand-dark md:mt-1">
+                <Link href="/shop" className="hover:text-cream-50 transition-colors">Shop</Link>
+                <Link href="/commissions" className="hover:text-cream-50 transition-colors">Commissions</Link>
+                <Link href="/contact" className="hover:text-cream-50 transition-colors">Contact</Link>
+                <Link href="/instagram" className="hover:text-cream-50 transition-colors">Instagram</Link>
+              </div>
+
+              {/* Contact info */}
+              <div className="text-xs tracking-wide text-sand-dark space-y-2 md:text-right">
+                <a href="tel:8139955223" className="block hover:text-cream-50 transition-colors">(813)-995-5223</a>
+                <a href="mailto:info@ellason.art" className="block hover:text-cream-50 transition-colors">info@ellason.art</a>
+              </div>
+            </div>
+
+            {/* Secondary EA branding row */}
+            <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
+              {/* EA Logo placeholder — swap src for the real image file when ready */}
+              <div className="flex items-center gap-4">
+                <img
+                  src="/ea-logo-placeholder.png"
+                  alt="EA Secondary Logo"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain opacity-80"
+                  onError={(e) => {
+                    // Fallback to text monogram if image isn't present yet
+                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                    (e.currentTarget.nextElementSibling as HTMLElement | null)?.classList.remove('hidden');
+                  }}
+                />
+                {/* Text monogram fallback (hidden when image loads) */}
+                <span className="text-3xl font-serif italic tracking-tight text-butter-yellow select-none">EA</span>
+              </div>
+
+              <p className="text-[10px] tracking-widest uppercase text-sand-dark opacity-50">
+                &copy; {new Date().getFullYear()} Ellason Art. All rights reserved.
               </p>
             </div>
-            <div className="flex gap-8 text-xs tracking-[0.2em] uppercase text-sand-dark">
-              <Link href="/shop" className="hover:text-cream-50 transition-colors">Shop</Link>
-              <Link href="/commissions" className="hover:text-cream-50 transition-colors">Commissions</Link>
-              <Link href="/contact" className="hover:text-cream-50 transition-colors">Contact</Link>
-              <Link href="/instagram" className="hover:text-cream-50 transition-colors">Instagram</Link>
-            </div>
-          </div>
-          <div className="mt-16 text-center text-[10px] tracking-widest uppercase text-sand-dark opacity-50 border-t border-neutral-800 pt-8">
-            &copy; {new Date().getFullYear()} Ellason Art. All rights reserved.
+
           </div>
         </footer>
 

@@ -30,6 +30,8 @@ const config: Config = {
           DEFAULT: '#9E7822',
           dark: '#6E5114',
         },
+        // Soft pastel accent for primary buttons, hover states, and section backgrounds
+        'butter-yellow': '#F7E7A9',
         background: '#FAF8F5',
         foreground: '#1F1E1D',
       },

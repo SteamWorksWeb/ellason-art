@@ -6,8 +6,8 @@ export default function ContactForm(props: any) {
   const leftKicker = props.kicker || 'Studio Location';
   const leftHeadline = props.headline || 'Get in Touch';
   const leftDesc = props.description || 'Reach out regarding available pieces, gallery representation, or general press inquiries. I endeavor to reply to all messages within 48 hours.';
-  const email = props.email || 'studio@ellasonart.com';
-  const phone = props.phone || '+1 (555) 123-4567';
+  const email = props.email || 'info@ellason.art';
+  const phone = props.phone || '(813)-995-5223';
   const hours = props.hours || 'Monday – Friday, 10am – 5pm EST';
   const rightHeadline = props.formHeadline || 'Send a Message';
 

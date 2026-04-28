@@ -8,6 +8,7 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
 import { Users } from './collections/Users';
 import { Pages } from './collections/Pages';
 import { Media } from './collections/Media';
+import { Reviews } from './collections/Reviews';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -20,12 +21,14 @@ export default buildConfig({
     Users,
     Pages,
     Media,
+    Reviews,
   ],
   editor: lexicalEditor({}),
   plugins: [
     vercelBlobStorage({
       collections: {
         media: true,
+        reviews: true,
       },
       token: process.env.BLOB_READ_WRITE_TOKEN,
     }),
