@@ -16,12 +16,12 @@ function BioHeroSection() {
         <Image src="/images/ellason profile 1.jpg" alt="About the Artist" fill className="object-cover object-center grayscale-[20%]" priority />
       </div>
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-24 bg-cream-50 order-2 lg:order-2">
-        <h2 className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">About the Artist</h2>
+        <h2 className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">The Artist</h2>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
-          The Artist Behind {"\n"} the Canvas
+          Hi, I&rsquo;m Ellason.
         </h1>
         <p className="text-lg text-neutral-800 font-light leading-relaxed max-w-lg mb-10">
-          Drawing profound inspiration from the unyielding beauty of the coastline, my work is a study in texture, serene light, and organic form. I believe that an original piece of art should do more than fill an empty wall—it should anchor a room, elevate its essence, and provide a moment of daily quietude.
+          I was born and raised in Tampa, Florida and am a 2026 graduate of Clemson University in Special Education. Art has always been something I have loved, but over time, it has become a way for me to create meaningful, personal pieces that others can connect with and cherish.
         </p>
         <div className="w-16 border-b-[1.5px] border-brandYellow"></div>
       </div>
@@ -36,20 +36,19 @@ function StoryProseSection() {
       <article className="max-w-3xl mx-auto flex flex-col space-y-24">
         <div>
           <h2 className="text-3xl lg:text-4xl font-serif font-light text-neutral-900 mb-8 pb-4 inline-block">
-            Artistic Style &amp; Inspiration
+            Faith &amp; Family
           </h2>
           <div className="space-y-8 text-neutral-700 font-light leading-loose text-lg">
-            <p>Every stroke and layer on the canvas is an homage to the elemental world—the salt air, the undulating tides, and the soft, diffused light of twilight. My palette relies heavily on warm creams, deep sands, and muted blues to reflect the world outside my studio window.</p>
-            <p>Using specialized trowels, raw pigments, and thick impasto mediums, I prioritize physical texture as much as color. These subtle ridges and valleys interact with the shifting natural light in your home, breathing a quiet, evolving life into the painting throughout the day.</p>
+            <p>My faith is a big part of who I am. As a Christian, I strive to create with intention, joy, and purpose, and I feel so grateful to use my creativity in a way that reflects that.</p>
+            <p>My nine-person family has also played such an important role in supporting and encouraging me throughout this journey.</p>
           </div>
         </div>
         <div>
           <h2 className="text-3xl lg:text-4xl font-serif font-light text-neutral-900 mb-8 pb-4 inline-block">
-            The Mission
+            A Few Fun Things
           </h2>
           <div className="space-y-8 text-neutral-700 font-light leading-loose text-lg">
-            <p>The foundation of Ellason Art is rooted in the belief that luxury should feel deeply personal and grounded. I aim to create heirlooms—bespoke pieces of fine art designed specifically to compliment high-end interiors and modern spaces.</p>
-            <p>Whether you are selecting a piece from a curated collection or collaborating with me on a deeply personal commission, my mission is to seamlessly connect organic coastal serenity with your everyday environment.</p>
+            <p>My favorite color is yellow, which you will definitely see throughout my work. I am completely obsessed with ice cream, and I love traveling and finding inspiration in new places.</p>
           </div>
         </div>
       </article>
@@ -80,10 +79,10 @@ function BottomCTASection() {
     <section className="bg-brand-blue py-32 px-6 text-center">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-4xl lg:text-4xl font-serif font-light text-cream-100 mb-6 tracking-tight">
-          Bring the Coast into Your Home
+          Art That Feels Personal.
         </h2>
         <p className="text-lg text-blue-100/80 font-light leading-relaxed mb-12 max-w-lg mx-auto">
-          Explore the available curated works, or reach out to collaborate on a custom dimension and palette tailored to your unique space.
+          Ellason&rsquo;s Art is all about creating art that feels timeless, elegant, and personal. Whether you are purchasing a piece or commissioning something special, I hope my work brings joy and meaning into your space.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Link href="/shop" className="w-full sm:w-auto px-10 py-4 bg-transparent border border-white text-white hover:bg-white hover:text-[#0e5492] rounded-md font-medium uppercase tracking-wide text-sm transition-colors">
