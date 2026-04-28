@@ -42,7 +42,8 @@ export default function RootLayout({
 
             {/* Navigation Links */}
             <nav className="hidden md:flex items-center gap-10 text-sm tracking-[0.15em] uppercase text-neutral-600">
-              <Link href="/shop" className="hover:text-foreground transition-colors">Shop</Link>
+              <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
+              {/* <Link href="/shop" className="hover:text-foreground transition-colors">Shop</Link> */}
               <Link href="/commissions" className="hover:text-foreground transition-colors">Commissions</Link>
               <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
               <Link href="/reviews" className="hover:text-foreground transition-colors">Reviews</Link>
@@ -87,7 +88,8 @@ export default function RootLayout({
 
               {/* Navigation links */}
               <div className="flex gap-8 text-xs tracking-[0.2em] uppercase text-sand-dark md:mt-1">
-                <Link href="/shop" className="hover:text-cream-50 transition-colors">Shop</Link>
+                <Link href="/" className="hover:text-cream-50 transition-colors">Home</Link>
+                {/* <Link href="/shop" className="hover:text-cream-50 transition-colors">Shop</Link> */}
                 <Link href="/commissions" className="hover:text-cream-50 transition-colors">Commissions</Link>
                 <Link href="/contact" className="hover:text-cream-50 transition-colors">Contact</Link>
                 <Link href="/instagram" className="hover:text-cream-50 transition-colors">Instagram</Link>
