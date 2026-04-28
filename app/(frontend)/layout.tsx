@@ -39,7 +39,7 @@ export default function RootLayout({
             {/* Logo area */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/logo-ea2-white.png"
+                src="/images/Logo-ea2-white.png"
                 alt="Ellason Art Secondary Logo"
                 width={100}
                 height={40}

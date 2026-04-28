@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { buttonVariants } from "@/components/ui/button";
+import ShopifyHomeEmbed from "@/components/ShopifyHomeEmbed";
 
 export const metadata: Metadata = {
   title: 'Ellason Art | Coastal-Inspired Art for Elevated Spaces',
@@ -58,13 +59,7 @@ function BrandStatementSection() {
   );
 }
 
-// ─── Featured Works ───────────────────────────────────────────────────────────
-const WORKS = [
-  { id: '1', title: 'Tideland Study I',  size: '36" x 48"', imageSrc: '/images/art 1.jpg' },
-  { id: '2', title: 'Oasis in Sand',     size: '48" x 60"', imageSrc: '/images/art 2.jpg' },
-  { id: '3', title: 'Whispering Dune',   size: '30" x 40"', imageSrc: '/images/art 3.jpg' },
-];
-
+// ─── Featured Works ──────────────────────────────────────────────────────────
 function FeaturedWorksSection() {
   return (
     <section className="bg-background py-24 px-6 lg:px-12">
@@ -75,22 +70,14 @@ function FeaturedWorksSection() {
             View All Works &rarr;
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-          {WORKS.map((work) => (
-            <div key={work.id} className="group block">
-              <div className="relative aspect-[4/5] bg-neutral-100 mb-6 overflow-hidden">
-                <Image
-                  src={work.imageSrc}
-                  alt={work.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover object-center transition-transform duration-[2000ms] ease-out"
-                />
-              </div>
-              <h3 className="text-2xl font-serif font-light text-neutral-800 mb-2">{work.title}</h3>
-              <p className="text-neutral-400 text-[10px] tracking-[0.2em] uppercase">{work.size}</p>
-            </div>
-          ))}
+        <ShopifyHomeEmbed />
+        <div className="text-center mt-8">
+          <Link
+            href="/shop"
+            className="bg-[#1f1e1c] text-[#faf8f5] hover:bg-[#333230] hover:text-white rounded-md font-medium uppercase tracking-wide text-sm px-8 py-3 transition-colors inline-block"
+          >
+            Shop All Art
+          </Link>
         </div>
       </div>
     </section>
