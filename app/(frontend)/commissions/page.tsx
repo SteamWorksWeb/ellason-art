@@ -26,7 +26,7 @@ function ServiceHeroSection() {
         </div>
       </div>
       <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-full order-1 lg:order-2 bg-neutral-200">
-        <Image src="/images/6.jpeg" alt="Commission artwork — coastal painting" fill className="object-cover object-center" priority />
+        <Image src="/images/2.jpeg" alt="Commission artwork — coastal painting" fill className="object-cover object-center" priority />
       </div>
     </section>
   );
