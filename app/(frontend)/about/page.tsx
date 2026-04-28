@@ -34,13 +34,18 @@ function StoryProseSection() {
   return (
     <section className="py-24 lg:py-32 px-6 bg-[#faf8f5]">
       <article className="max-w-3xl mx-auto flex flex-col space-y-24">
-        <div>
-          <h2 className="text-3xl lg:text-4xl font-serif font-light text-[#1f1e1c] mb-8 pb-4 inline-block">
-            Faith &amp; Family
-          </h2>
-          <div className="space-y-8 text-[#1f1e1c]/70 font-light leading-loose text-lg">
-            <p>My faith is a big part of who I am. As a Christian, I strive to create with intention, joy, and purpose, and I feel so grateful to use my creativity in a way that reflects that.</p>
-            <p>My nine-person family has also played such an important role in supporting and encouraging me throughout this journey.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-serif font-light text-[#1f1e1c] mb-8 pb-4 inline-block">
+              Faith &amp; Family
+            </h2>
+            <div className="space-y-8 text-[#1f1e1c]/70 font-light leading-loose text-lg">
+              <p>My faith is a big part of who I am. As a Christian, I strive to create with intention, joy, and purpose, and I feel so grateful to use my creativity in a way that reflects that.</p>
+              <p>My nine-person family has also played such an important role in supporting and encouraging me throughout this journey.</p>
+            </div>
+          </div>
+          <div>
+            <Image src="/images/6.jpeg" alt="Ellason's Family" width={800} height={600} className="rounded-md object-cover w-full h-auto" />
           </div>
         </div>
         <div>
