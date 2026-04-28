@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 /**
@@ -13,12 +14,12 @@ export default function EaLogo() {
   return (
     <div className="flex items-center gap-4">
       {!imgFailed && (
-        <img
-          src="/ea-logo-placeholder.png"
-          alt="EA Secondary Logo"
-          width={48}
-          height={48}
-          className="w-12 h-12 object-contain opacity-80"
+        <Image
+          src="/images/Logo-ea2-white.png"
+          alt="Ellason Art Secondary Logo"
+          width={80}
+          height={80}
+          className="object-contain opacity-80"
           onError={() => setImgFailed(true)}
         />
       )}
