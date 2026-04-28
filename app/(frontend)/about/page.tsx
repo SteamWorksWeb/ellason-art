@@ -48,12 +48,17 @@ function StoryProseSection() {
             <Image src="/images/6.jpeg" alt="Ellason's Family" width={800} height={600} className="rounded-md object-cover w-full h-auto" />
           </div>
         </div>
-        <div>
-          <h2 className="text-3xl lg:text-4xl font-serif font-light text-[#1f1e1c] mb-8 pb-4 inline-block">
-            A Few Fun Things
-          </h2>
-          <div className="space-y-8 text-[#1f1e1c]/70 font-light leading-loose text-lg">
-            <p>My favorite color is yellow, which you will definitely see throughout my work. I am completely obsessed with ice cream, and I love traveling and finding inspiration in new places.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <Image src="/images/11.jpg" alt="Fun things about Ellason" width={800} height={600} className="rounded-md object-cover w-full h-auto" />
+          </div>
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-serif font-light text-[#1f1e1c] mb-8 pb-4 inline-block">
+              A Few Fun Things
+            </h2>
+            <div className="space-y-8 text-[#1f1e1c]/70 font-light leading-loose text-lg">
+              <p>My favorite color is yellow, which you will definitely see throughout my work. I am completely obsessed with ice cream, and I love traveling and finding inspiration in new places.</p>
+            </div>
           </div>
         </div>
       </article>
