@@ -30,8 +30,20 @@ const config: Config = {
           DEFAULT: '#9E7822',
           dark: '#6E5114',
         },
-        // Soft pastel accent for primary buttons, hover states, and section backgrounds
+        // ── Design System Palette ─────────────────────────────────────────
+        // Soft pastel accent (legacy alias kept for backwards compatibility)
         'butter-yellow': '#F7E7A9',
+        // Blues
+        'brand-blue': {
+          light: '#769ed1',   // Light Blue
+          DEFAULT: '#0e5492', // Dark Blue
+        },
+        // Yellows
+        'brand-yellow': {
+          warm: '#f8d998',    // Warm Yellow  ← CTA section button
+          light: '#fff2cf',   // Light Yellow ← subtle backgrounds
+        },
+        // ─────────────────────────────────────────────────────────────────
         background: '#FAF8F5',
         foreground: '#1F1E1D',
       },

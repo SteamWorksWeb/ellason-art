@@ -67,10 +67,10 @@ const HeroSection = (props: any) => {
           {dynamicHeroText}
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4">
-          <Link href={btn1Link} className="px-8 py-3.5 bg-cream-50 text-neutral-900 text-xs tracking-widest uppercase hover:bg-white transition-colors shadow-lg">
+          <Link href={btn1Link} className="px-8 py-3.5 bg-cream-50 text-neutral-900 text-xs tracking-widest uppercase hover:bg-white transition-colors shadow-lg rounded-sm">
             {btn1Text}
           </Link>
-          <Link href={btn2Link} className="px-8 py-3.5 border border-cream-50/60 text-cream-50 backdrop-blur-md text-xs tracking-widest uppercase hover:bg-cream-50/30 transition-all shadow-lg">
+          <Link href={btn2Link} className="px-8 py-3.5 bg-brand-yellow-warm text-neutral-900 text-xs tracking-widest uppercase hover:brightness-105 transition-all shadow-lg rounded-sm font-semibold">
             {btn2Text}
           </Link>
         </div>
@@ -188,15 +188,15 @@ const CommissionsSection = (props: any) => {
   const btnLink = props.buttonLink || '/commissions';
 
   return (
-    <section className="bg-brandYellow-light/30 py-32 px-6 text-center border-y border-brandYellow/20">
+    <section className="bg-brand-blue py-32 px-6 text-center">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-serif font-light text-neutral-800 mb-8">
+        <h2 className="text-4xl lg:text-5xl font-serif font-light text-cream-100 mb-8">
           {headline}
         </h2>
-        <p className="text-lg text-neutral-600 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
+        <p className="text-lg text-blue-100/80 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
           {desc}
         </p>
-        <Link href={btnLink} className="px-10 py-4 bg-brandYellow hover:bg-brandYellow-dark text-white text-xs tracking-[0.15em] uppercase transition-all shadow-sm">
+        <Link href={btnLink} className="inline-block px-10 py-4 bg-brand-yellow-warm hover:brightness-105 text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md rounded-sm">
           {btnText}
         </Link>
       </div>

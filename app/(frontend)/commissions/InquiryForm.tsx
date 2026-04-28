@@ -119,7 +119,7 @@ export default function InquiryForm(props: any) {
             </div>
 
             <div className="pt-6">
-              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-brandYellow hover:bg-brandYellow-dark text-white font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md focus:outline-none">
+              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-brand-blue hover:bg-brand-blue-light text-cream-50 font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md focus:outline-none rounded-sm">
                 Submit Inquiry
               </button>
             </div>

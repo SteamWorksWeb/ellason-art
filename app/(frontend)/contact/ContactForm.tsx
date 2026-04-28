@@ -77,7 +77,7 @@ export default function ContactForm(props: any) {
             </p>
             <button 
               onClick={() => setIsSubmitted(false)}
-              className="mt-8 text-[10px] tracking-[0.15em] uppercase text-brandYellow hover:text-brandYellow-dark transition-colors border-b border-brandYellow pb-1 font-bold"
+              className="mt-8 text-[10px] tracking-[0.15em] uppercase text-brand-blue hover:text-brand-blue-light transition-colors border-b border-brand-blue pb-1 font-bold"
             >
               Send Another Message
             </button>
@@ -113,7 +113,7 @@ export default function ContactForm(props: any) {
             </div>
 
             <div className="pt-8">
-              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-brandYellow hover:bg-brandYellow-dark text-white font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandYellow">
+              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-brand-blue hover:bg-brand-blue-light text-cream-50 font-bold text-xs tracking-[0.15em] uppercase transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue rounded-sm">
                 Send Message
               </button>
             </div>
