@@ -41,9 +41,9 @@ export default function RootLayout({
               <Image
                 src="/images/Logo-ea2-white.png"
                 alt="Ellason Art Secondary Logo"
-                width={100}
-                height={40}
-                className="object-contain"
+                width={150}
+                height={56}
+                className="h-10 w-auto md:h-12 lg:h-14 object-contain"
                 priority
               />
             </Link>
