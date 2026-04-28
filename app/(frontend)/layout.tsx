@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import EaLogo from './EaLogo';
 import { buttonVariants } from '@/components/ui/button';
 
@@ -36,8 +37,15 @@ export default function RootLayout({
           <div className="max-w-[1536px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
             
             {/* Logo area */}
-            <Link href="/" className="text-2xl font-serif tracking-widest uppercase text-[#faf8f5]">
-              Ellason
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo-ea2-white.png"
+                alt="Ellason Art Secondary Logo"
+                width={100}
+                height={40}
+                className="object-contain"
+                priority
+              />
             </Link>
 
             {/* Navigation Links */}
