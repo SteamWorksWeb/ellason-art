@@ -26,7 +26,7 @@ function ServiceHeroSection() {
         </div>
       </div>
       <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-full order-1 lg:order-2 bg-neutral-200">
-        <Image src="/images/6.jpg" alt="Commission artwork — coastal painting" fill className="object-cover object-center" priority />
+        <Image src="/images/6.jpeg" alt="Commission artwork — coastal painting" fill className="object-cover object-center" priority />
       </div>
     </section>
   );
@@ -63,10 +63,10 @@ function ProcessTimelineSection() {
 
 // ─── Past Commissions Gallery ─────────────────────────────────────────────────
 const GALLERY = [
-  { src: '/images/10.jpg', alt: 'Commission — landscape painting', span: 'lg:row-span-2' },
-  { src: '/images/1.jpg',  alt: 'Commission — coastal artwork',    span: '' },
-  { src: '/images/3.jpg',  alt: 'Commission — textured piece',     span: '' },
-  { src: '/images/11.jpg', alt: 'Commission — studio interior',    span: 'md:col-span-2 lg:col-span-2 hidden md:block' },
+  { src: '/images/10.jpg',  alt: 'Commission — landscape painting', span: 'lg:row-span-2' },
+  { src: '/images/1.jpeg',  alt: 'Commission — coastal artwork',    span: '' },
+  { src: '/images/3.jpeg',  alt: 'Commission — textured piece',     span: '' },
+  { src: '/images/11.jpg',  alt: 'Commission — studio interior',    span: 'md:col-span-2 lg:col-span-2 hidden md:block' },
 ];
 
 function PastCommissionsGallerySection() {

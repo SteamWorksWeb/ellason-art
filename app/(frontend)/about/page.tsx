@@ -13,7 +13,7 @@ function BioHeroSection() {
   return (
     <section className="flex flex-col lg:flex-row min-h-[85vh] border-b border-neutral-200">
       <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full bg-neutral-200 order-1 lg:order-1">
-        <Image src="/images/5.jpg" alt="Ellason — portrait of the artist" fill className="object-cover object-center grayscale-[20%]" priority />
+        <Image src="/images/5.jpeg" alt="Ellason — portrait of the artist" fill className="object-cover object-center grayscale-[20%]" priority />
       </div>
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-24 bg-[#faf8f5] order-2 lg:order-2">
         <h2 className="text-base md:text-lg tracking-[0.25em] uppercase text-neutral-500 mb-6 font-semibold">The Artist</h2>
@@ -63,7 +63,7 @@ function StudioGallerySection() {
       <h3 className="text-base tracking-[0.2em] uppercase text-neutral-500 text-center mb-16 pt-16 font-semibold">Studio Fragments</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
         <div className="relative w-full aspect-square md:aspect-[4/5] bg-neutral-200 overflow-hidden shadow-sm group">
-          <Image src="/images/2.jpg" alt="Artist holding sheep painting" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center transition-transform duration-[3000ms] group-hover:scale-105" />
+          <Image src="/images/2.jpeg" alt="Artist holding sheep painting" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center transition-transform duration-[3000ms] group-hover:scale-105" />
         </div>
         <div className="relative w-full aspect-square md:aspect-[3/4] bg-neutral-200 overflow-hidden shadow-sm md:mt-32 group">
           <Image src="/images/10.jpg" alt="Studio detail" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center transition-transform duration-[3000ms] group-hover:scale-105" />
