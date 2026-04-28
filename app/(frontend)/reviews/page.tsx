@@ -63,7 +63,7 @@ function StarRating({ rating, interactive = false, onChange }: {
             aria-label={interactive ? `Rate ${star} out of 5` : `${rating} out of 5 stars`}
           >
             <svg
-              className={`w-5 h-5 ${filled ? 'text-[#f7e7a9]' : 'text-neutral-300'}`}
+              className={`w-5 h-5 ${filled ? 'text-[#1f1e1c]' : 'text-neutral-300'}`}
               fill={filled ? 'currentColor' : 'none'}
               stroke="currentColor"
               strokeWidth="1.5"
@@ -83,13 +83,13 @@ function StarRating({ rating, interactive = false, onChange }: {
 function ReviewCard({ review }: { review: Review }) {
   const initials = review.name.split(' ').map((n) => n[0]).join('').toUpperCase().slice(0, 2);
   return (
-    <article className="bg-white border border-cream-200 p-8 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-sm">
+    <article className="bg-[#faf8f5] border border-neutral-200 p-8 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-sm">
       <StarRating rating={review.rating} />
       <blockquote className="text-neutral-700 font-light leading-relaxed text-sm flex-grow">
         &ldquo;{review.review}&rdquo;
       </blockquote>
       <div className="flex items-center gap-3 pt-4 border-t border-cream-200">
-        <div className="w-10 h-10 rounded-full bg-[#f7e7a9]/30 flex items-center justify-center flex-shrink-0 ring-2 ring-[#f7e7a9]/40">
+        <div className="w-10 h-10 rounded-full bg-[#1f1e1c]/10 flex items-center justify-center flex-shrink-0 ring-2 ring-[#1f1e1c]/20">
           <span className="text-xs font-semibold text-neutral-700 tracking-wider">{initials}</span>
         </div>
         <div>
@@ -140,7 +140,7 @@ export default function ReviewsPage() {
     <div className="flex flex-col min-h-screen bg-background">
 
       {/* Page Header */}
-      <section className="bg-cream-100 border-b border-cream-300 py-20 px-6 text-center">
+      <section className="bg-[#faf8f5] border-b border-neutral-200 py-20 px-6 text-center">
         <p className="text-[10px] tracking-[0.3em] uppercase text-neutral-500 mb-4 font-semibold">Client Voices</p>
         <h1 className="text-4xl md:text-5xl font-serif text-neutral-800 font-light leading-snug mb-6">
           Reviews &amp; Testimonials
@@ -151,28 +151,28 @@ export default function ReviewsPage() {
       </section>
 
       {/* Submission Form */}
-      <section className="bg-[#f7e7a9]/10 border-b border-[#f7e7a9]/30 py-20 px-6">
+      <section className="bg-white border-b border-neutral-100 py-20 px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-xs tracking-[0.2em] uppercase text-neutral-700 font-bold mb-10 text-center">
             Share Your Experience
           </h2>
 
           {submitStatus === 'success' ? (
-            <div className="bg-white border border-[#f7e7a9]/40 p-12 text-center rounded-sm shadow-sm">
-              <svg className="w-10 h-10 text-[#9E7822] mx-auto mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-[#faf8f5] border border-neutral-200 p-12 text-center rounded-sm shadow-sm">
+              <svg className="w-10 h-10 text-[#1f1e1c] mx-auto mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 13l4 4L19 7" />
               </svg>
               <h3 className="font-serif text-2xl font-light text-neutral-800 mb-3">Thank You!</h3>
               <p className="text-sm text-neutral-600 font-light">Your review has been submitted successfully.</p>
               <button
                 onClick={() => setSubmitStatus('idle')}
-                className="mt-6 text-[10px] tracking-[0.15em] uppercase text-[#0e5492] hover:text-[#769ed1] border-b border-[#0e5492] pb-0.5 font-bold transition-colors"
+                className="mt-6 text-[10px] tracking-[0.15em] uppercase text-[#1f1e1c] hover:text-[#333230] border-b border-[#1f1e1c] pb-0.5 font-bold transition-colors"
               >
                 Submit Another Review
               </button>
             </div>
           ) : (
-            <form id="reviews-form" onSubmit={handleSubmit} className="bg-white border border-cream-200 p-10 rounded-sm shadow-sm flex flex-col gap-8">
+            <form id="reviews-form" onSubmit={handleSubmit} className="bg-[#faf8f5] border border-neutral-200 p-10 rounded-sm shadow-sm flex flex-col gap-8">
               {/* Name */}
               <div className="flex flex-col relative group">
                 <input
@@ -183,7 +183,7 @@ export default function ReviewsPage() {
                   value={form.name}
                   onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
                   placeholder="Your Name"
-                  className="peer w-full bg-transparent border-b border-neutral-300 py-3 text-sm text-neutral-900 font-medium focus:outline-none focus:border-[#0e5492] transition-colors placeholder-transparent"
+                  className="peer w-full bg-transparent border-b border-neutral-300 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent"
                 />
                 <label htmlFor="review-name" className="absolute left-0 top-3 text-sm font-semibold text-neutral-500 cursor-text transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-neutral-700 peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-neutral-700">
                   Full Name
@@ -206,7 +206,7 @@ export default function ReviewsPage() {
                   value={form.review}
                   onChange={(e) => setForm((p) => ({ ...p, review: e.target.value }))}
                   placeholder="Your review"
-                  className="peer w-full bg-transparent border-b border-neutral-300 py-3 text-sm text-neutral-900 font-medium focus:outline-none focus:border-[#0e5492] transition-colors placeholder-transparent resize-none leading-relaxed"
+                  className="peer w-full bg-transparent border-b border-neutral-300 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent resize-none leading-relaxed"
                 />
                 <label htmlFor="review-text" className="absolute left-0 top-7 text-sm font-semibold text-neutral-500 cursor-text transition-all peer-focus:-top-2 peer-focus:text-[10px] peer-focus:text-neutral-700 peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-2 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-neutral-700">
                   Your Review
@@ -222,7 +222,7 @@ export default function ReviewsPage() {
                   id="review-submit"
                   type="submit"
                   disabled={submitting}
-                  className="w-full md:w-auto px-12 py-4 bg-[#f7e7a9] hover:bg-[#e1d297] text-neutral-900 font-medium text-sm tracking-wide uppercase transition-colors focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
+                  className="w-full md:w-auto px-12 py-4 bg-[#1f1e1c] hover:bg-[#333230] text-[#faf8f5] font-medium text-sm tracking-wide uppercase transition-colors focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
                 >
                   {submitting ? 'Submitting…' : 'Submit Review'}
                 </button>

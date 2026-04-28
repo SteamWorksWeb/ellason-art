@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 // ─── Service Hero ─────────────────────────────────────────────────────────────
 function ServiceHeroSection() {
   return (
-    <section className="flex flex-col lg:flex-row min-h-[70vh] border-b border-cream-200">
-      <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-24 order-2 lg:order-1 bg-cream-50">
-        <h2 className="text-base md:text-lg tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">Bespoke Services</h2>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
+    <section className="flex flex-col lg:flex-row min-h-[70vh] border-b border-neutral-200">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-24 order-2 lg:order-1 bg-[#faf8f5]">
+        <h2 className="text-base md:text-lg tracking-[0.25em] uppercase text-neutral-500 mb-6 font-semibold">Bespoke Services</h2>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#1f1e1c] leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
           Commission an{"\n"} Original Piece
         </h1>
-        <p className="text-lg text-neutral-800 font-light leading-relaxed mb-10 max-w-lg">
+        <p className="text-lg text-[#1f1e1c]/80 font-light leading-relaxed mb-10 max-w-lg">
           Collaborate closely to bring your unique vision to life. Each commission is an intimate journey, tailored specifically to the dimensions, palette, and emotional resonance of your space.
         </p>
         <div>
-          <span className="text-xs tracking-widest uppercase text-brandYellow font-bold border-b border-brandYellow pb-1">
+          <span className="text-xs tracking-widest uppercase text-[#1f1e1c] font-bold border-b border-[#1f1e1c]/40 pb-1">
             Custom works begin at $1,500
           </span>
         </div>
@@ -43,16 +43,16 @@ const STEPS = [
 
 function ProcessTimelineSection() {
   return (
-    <section className="bg-sand-light/10 py-24 px-6 border-b border-cream-200">
+    <section className="bg-[#faf8f5] py-24 px-6 border-b border-neutral-200">
       <div className="max-w-6xl mx-auto">
-        <h3 className="text-base tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-semibold">The Process</h3>
+        <h3 className="text-base tracking-[0.2em] uppercase text-neutral-500 text-center mb-16 font-semibold">The Process</h3>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 lg:gap-12">
           {STEPS.map((step, idx) => (
             <div key={idx} className="flex flex-col relative group">
-              <div className="text-4xl font-serif text-brandYellow mb-4 transition-colors font-medium">{step.num}</div>
-              <div className="hidden md:block absolute top-6 left-12 right-0 h-[1px] bg-brandYellow/30 w-[80%] group-last:hidden"></div>
-              <h4 className="text-[11px] tracking-widest uppercase text-neutral-900 mb-3 font-bold">{step.title}</h4>
-              <p className="text-sm font-light text-neutral-800 leading-relaxed">{step.desc}</p>
+              <div className="text-4xl font-serif text-[#1f1e1c]/40 mb-4 transition-colors font-medium">{step.num}</div>
+              <div className="hidden md:block absolute top-6 left-12 right-0 h-[1px] bg-[#1f1e1c]/10 w-[80%] group-last:hidden"></div>
+              <h4 className="text-[11px] tracking-widest uppercase text-[#1f1e1c] mb-3 font-bold">{step.title}</h4>
+              <p className="text-sm font-light text-[#1f1e1c]/70 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -71,7 +71,7 @@ const GALLERY = [
 
 function PastCommissionsGallerySection() {
   return (
-    <section className="bg-cream-100 py-32 px-6 border-t border-cream-200">
+    <section className="bg-[#faf8f5] py-32 px-6 border-t border-neutral-200">
       <div className="max-w-[1536px] mx-auto">
         <h3 className="text-base tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-bold">Past Commissions</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-[300px] md:auto-rows-[400px]">
