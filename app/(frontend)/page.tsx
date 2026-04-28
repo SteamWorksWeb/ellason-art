@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { getPayload } from 'payload';
 import configPromise from '../../payload.config';
 import React from 'react';
+import { buttonVariants } from '@/components/ui/button';
 
 // Helper to extract raw text from Payload's Lexical JSON editor state
 function extractLexicalText(node: any): string {
@@ -70,7 +71,7 @@ const HeroSection = (props: any) => {
           <Link href={btn1Link} className="px-8 py-3.5 bg-cream-50 text-neutral-900 text-xs tracking-widest uppercase hover:bg-white transition-colors shadow-lg rounded-sm">
             {btn1Text}
           </Link>
-          <Link href={btn2Link} className="px-8 py-3.5 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-widest uppercase transition-colors shadow-lg rounded-none">
+          <Link href={btn2Link} className={`px-8 py-3.5 shadow-lg ${buttonVariants()}`}>
             {btn2Text}
           </Link>
         </div>
@@ -169,7 +170,7 @@ const AboutPreviewSection = (props: any) => {
           <p className="text-neutral-600 mb-12 leading-relaxed font-light">
             {desc}
           </p>
-            <Link href={btnLink} className="inline-block bg-[#f7e7a9] hover:bg-[#e6d598] text-neutral-900 font-bold px-8 py-3.5 text-xs tracking-[0.15em] uppercase transition-colors rounded-md">
+            <Link href={btnLink} className={`px-8 py-3.5 ${buttonVariants()}`}>
             {btnText}
           </Link>
         </div>

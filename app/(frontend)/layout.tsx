@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import EaLogo from './EaLogo';
+import { buttonVariants } from '@/components/ui/button';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -52,7 +53,7 @@ export default function RootLayout({
             <div className="flex items-center">
               <Link 
                 href="/commissions#start" 
-                className="hidden sm:inline-block px-7 py-3 bg-butter-yellow text-neutral-900 text-xs tracking-[0.15em] uppercase font-medium hover:bg-brandYellow hover:text-white hover:shadow-lg transition-all duration-300 rounded-sm"
+                className={`hidden sm:inline-block px-7 py-3 shadow-sm ${buttonVariants()}`}
               >
                 Start a Commission
               </Link>
