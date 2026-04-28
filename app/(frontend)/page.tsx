@@ -76,25 +76,21 @@ function FeaturedWorksSection() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-          {WORKS.map((work) => {
-            const urlPath = `/shop/${work.title.toLowerCase().replace(/ /g, '-')}`;
-            return (
-              <Link href={urlPath} key={work.id} className="group block cursor-pointer">
-                <div className="relative aspect-[4/5] bg-neutral-100 mb-6 overflow-hidden">
-                  <Image
-                    src={work.imageSrc}
-                    alt={work.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-center transition-transform duration-[2000ms] group-hover:scale-105 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
-                </div>
-                <h3 className="text-2xl font-serif font-light text-neutral-800 mb-2">{work.title}</h3>
-                <p className="text-neutral-400 text-[10px] tracking-[0.2em] uppercase">{work.size}</p>
-              </Link>
-            );
-          })}
+          {WORKS.map((work) => (
+            <div key={work.id} className="group block">
+              <div className="relative aspect-[4/5] bg-neutral-100 mb-6 overflow-hidden">
+                <Image
+                  src={work.imageSrc}
+                  alt={work.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover object-center transition-transform duration-[2000ms] ease-out"
+                />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-neutral-800 mb-2">{work.title}</h3>
+              <p className="text-neutral-400 text-[10px] tracking-[0.2em] uppercase">{work.size}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
