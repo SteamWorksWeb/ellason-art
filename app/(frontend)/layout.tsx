@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import EaLogo from './EaLogo';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -100,23 +101,8 @@ export default function RootLayout({
 
             {/* Secondary EA branding row */}
             <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
-              {/* EA Logo placeholder — swap src for the real image file when ready */}
-              <div className="flex items-center gap-4">
-                <img
-                  src="/ea-logo-placeholder.png"
-                  alt="EA Secondary Logo"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain opacity-80"
-                  onError={(e) => {
-                    // Fallback to text monogram if image isn't present yet
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    (e.currentTarget.nextElementSibling as HTMLElement | null)?.classList.remove('hidden');
-                  }}
-                />
-                {/* Text monogram fallback (hidden when image loads) */}
-                <span className="text-3xl font-serif italic tracking-tight text-butter-yellow select-none">EA</span>
-              </div>
+              {/* EA Logo — Client Component owns the onError handler */}
+              <EaLogo />
 
               <p className="text-[10px] tracking-widest uppercase text-sand-dark opacity-50">
                 &copy; {new Date().getFullYear()} Ellason Art. All rights reserved.
