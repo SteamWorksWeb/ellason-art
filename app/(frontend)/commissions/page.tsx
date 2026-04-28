@@ -12,7 +12,7 @@ function ServiceHeroSection() {
   return (
     <section className="flex flex-col lg:flex-row min-h-[70vh] border-b border-cream-200">
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-24 order-2 lg:order-1 bg-cream-50">
-        <h2 className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">Bespoke Services</h2>
+        <h2 className="text-sm md:text-base tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">Bespoke Services</h2>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
           Commission an{"\n"} Original Piece
         </h1>
@@ -45,7 +45,7 @@ function ProcessTimelineSection() {
   return (
     <section className="bg-sand-light/10 py-24 px-6 border-b border-cream-200">
       <div className="max-w-6xl mx-auto">
-        <h3 className="text-xs tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-semibold">The Process</h3>
+        <h3 className="text-sm tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-semibold">The Process</h3>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 lg:gap-12">
           {STEPS.map((step, idx) => (
             <div key={idx} className="flex flex-col relative group">
@@ -73,7 +73,7 @@ function PastCommissionsGallerySection() {
   return (
     <section className="bg-cream-100 py-32 px-6 border-t border-cream-200">
       <div className="max-w-[1536px] mx-auto">
-        <h3 className="text-xs tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-bold">Past Commissions</h3>
+        <h3 className="text-sm tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-bold">Past Commissions</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-[300px] md:auto-rows-[400px]">
           {GALLERY.map((img, i) => (
             <div key={i} className={`relative w-full h-full bg-neutral-200 overflow-hidden group ${img.span}`}>
