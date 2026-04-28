@@ -169,7 +169,7 @@ const AboutPreviewSection = (props: any) => {
           <p className="text-neutral-600 mb-12 leading-relaxed font-light">
             {desc}
           </p>
-            <Link href={btnLink} className="inline-block bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold px-8 py-3.5 text-xs tracking-[0.15em] uppercase transition-colors rounded-none">
+            <Link href={btnLink} className="inline-block bg-[#f7e7a9] hover:bg-[#e6d598] text-neutral-900 font-bold px-8 py-3.5 text-xs tracking-[0.15em] uppercase transition-colors rounded-md">
             {btnText}
           </Link>
         </div>
