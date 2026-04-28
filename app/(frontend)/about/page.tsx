@@ -50,7 +50,7 @@ function StoryProseSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <Image src="/images/11.jpg" alt="Fun things about Ellason" width={800} height={600} className="rounded-md object-cover w-full h-auto" />
+            <Image src="/images/12.jpg" alt="Fun things about Ellason" width={800} height={600} className="rounded-md object-cover w-full h-auto" />
           </div>
           <div>
             <h2 className="text-3xl lg:text-4xl font-serif font-light text-[#1f1e1c] mb-8 pb-4 inline-block">
