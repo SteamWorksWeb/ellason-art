@@ -74,7 +74,7 @@ function FeaturedWorksSection() {
         <div className="text-center mt-8">
           <Link
             href="/shop"
-            className="bg-[#1f1e1c] text-[#faf8f5] hover:bg-[#333230] hover:text-white rounded-md font-medium uppercase tracking-wide text-sm px-8 py-3 transition-colors inline-block"
+            className="bg-transparent border border-[#1f1e1c] text-[#1f1e1c] hover:bg-[#1f1e1c] hover:text-[#faf8f5] rounded-md font-medium uppercase tracking-wide text-sm px-8 py-3 transition-colors inline-block mt-8"
           >
             Shop All Art
           </Link>
