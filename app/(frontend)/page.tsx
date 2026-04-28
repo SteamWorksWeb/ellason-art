@@ -23,7 +23,7 @@ function HeroSection() {
         className="z-10 text-center px-6 py-24 w-full max-w-5xl mx-auto flex flex-col items-center"
         style={{ backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.4) 0%, transparent 65%)' }}
       >
-        <span className="text-sm md:text-base tracking-[0.25em] uppercase text-cream-50 mb-6 font-semibold drop-shadow-md">
+        <span className="text-base md:text-lg tracking-[0.25em] uppercase text-cream-50 mb-6 font-semibold drop-shadow-md">
           Ellason Fine Art
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-5xl font-serif text-white leading-[1.25] tracking-wide mb-8 max-w-4xl [text-shadow:_0_4px_12px_rgb(0_0_0_/_40%)]">
@@ -70,7 +70,7 @@ function FeaturedWorksSection() {
     <section className="bg-background py-24 px-6 lg:px-12">
       <div className="max-w-[1536px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-cream-300 pb-6">
-          <h2 className="text-sm tracking-[0.2em] uppercase text-neutral-500 mb-4 md:mb-0">Curated Collection</h2>
+          <h2 className="text-base tracking-[0.2em] uppercase text-neutral-500 mb-4 md:mb-0">Curated Collection</h2>
           <Link href="/shop" className="text-[10px] tracking-widest uppercase text-neutral-800 hover:text-sand-dark transition-colors font-semibold">
             View All Works &rarr;
           </Link>
@@ -107,7 +107,7 @@ function AboutPreviewSection() {
     <section className="bg-cream-50 flex flex-col-reverse lg:flex-row overflow-hidden border-t border-cream-200">
       <div className="w-full lg:w-1/2 flex items-center justify-center p-16 lg:p-24 xl:p-32 bg-sand-light/10">
         <div className="max-w-lg">
-          <h2 className="text-sm tracking-[0.25em] uppercase text-neutral-400 mb-8 border-b inline-block border-neutral-300 pb-2">
+          <h2 className="text-base tracking-[0.25em] uppercase text-neutral-400 mb-8 border-b inline-block border-neutral-300 pb-2">
             The Artist
           </h2>
           <h3 className="text-4xl lg:text-5xl font-serif font-light mb-8 text-neutral-800 leading-tight whitespace-pre-line">

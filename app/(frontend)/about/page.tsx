@@ -16,7 +16,7 @@ function BioHeroSection() {
         <Image src="/images/ellason profile 1.jpg" alt="About the Artist" fill className="object-cover object-center grayscale-[20%]" priority />
       </div>
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-24 bg-cream-50 order-2 lg:order-2">
-        <h2 className="text-sm md:text-base tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">The Artist</h2>
+        <h2 className="text-base md:text-lg tracking-[0.25em] uppercase text-neutral-600 mb-6 font-semibold">The Artist</h2>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-neutral-900 leading-[1.1] mb-8 tracking-tight whitespace-pre-line">
           Hi, I&rsquo;m Ellason.
         </h1>
@@ -60,7 +60,7 @@ function StoryProseSection() {
 function StudioGallerySection() {
   return (
     <section className="py-16 px-6 max-w-6xl mx-auto w-full mb-32 border-t border-cream-200">
-      <h3 className="text-sm tracking-[0.2em] uppercase text-neutral-500 text-center mb-16 pt-16 font-semibold">Studio Fragments</h3>
+      <h3 className="text-base tracking-[0.2em] uppercase text-neutral-500 text-center mb-16 pt-16 font-semibold">Studio Fragments</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
         <div className="relative w-full aspect-square md:aspect-[4/5] bg-neutral-200 overflow-hidden shadow-sm group">
           <Image src="/images/art 1.jpg" alt="Studio details" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center transition-transform duration-[3000ms] group-hover:scale-105" />
