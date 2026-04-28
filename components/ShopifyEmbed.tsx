@@ -3,8 +3,7 @@ import { useEffect } from "react";
 
 export default function ShopifyEmbed() {
   useEffect(() => {
-    const scriptURL =
-      "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+    const scriptURL = "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
 
     function ShopifyBuyInit() {
       const client = (window as any).ShopifyBuy.buildClient({
@@ -14,7 +13,7 @@ export default function ShopifyEmbed() {
       (window as any).ShopifyBuy.UI.onReady(client).then(function (ui: any) {
         ui.createComponent("collection", {
           id: "346127237164",
-          node: document.getElementById("collection-component-1777414814746"),
+          node: document.getElementById("collection-component-1777416653860"),
           moneyFormat: "%24%7B%7Bamount%7D%7D",
           options: {
             product: {
@@ -40,13 +39,15 @@ export default function ShopifyEmbed() {
                   },
                 },
                 button: {
-                  color: "#171717",
-                  ":hover": { color: "#171717", "background-color": "#ded098" },
-                  "background-color": "#f7e7a9",
-                  ":focus": { "background-color": "#ded098" },
+                  color: "#faf8f5",
+                  ":hover": { color: "#faf8f5", "background-color": "#353330" },
+                  "background-color": "#1f1e1c",
+                  ":focus": { "background-color": "#353330" },
+                  "border-radius": "8px",
                 },
               },
               buttonDestination: "modal",
+              contents: { options: false },
               text: { button: "View product" },
             },
             productSet: {
@@ -72,36 +73,37 @@ export default function ShopifyEmbed() {
                   },
                 },
                 button: {
-                  color: "#171717",
-                  ":hover": { color: "#171717", "background-color": "#ded098" },
-                  "background-color": "#f7e7a9",
-                  ":focus": { "background-color": "#ded098" },
+                  color: "#faf8f5",
+                  ":hover": { color: "#faf8f5", "background-color": "#353330" },
+                  "background-color": "#1f1e1c",
+                  ":focus": { "background-color": "#353330" },
+                  "border-radius": "8px",
                 },
               },
               text: { button: "Add to cart" },
             },
+            option: {},
             cart: {
               styles: {
                 button: {
-                  color: "#171717",
-                  ":hover": { color: "#171717", "background-color": "#ded098" },
-                  "background-color": "#f7e7a9",
-                  ":focus": { "background-color": "#ded098" },
+                  color: "#faf8f5",
+                  ":hover": { color: "#faf8f5", "background-color": "#353330" },
+                  "background-color": "#1f1e1c",
+                  ":focus": { "background-color": "#353330" },
+                  "border-radius": "8px",
                 },
               },
+              text: { total: "Subtotal", button: "Checkout" },
             },
             toggle: {
               styles: {
                 toggle: {
-                  "background-color": "#f7e7a9",
-                  ":hover": { "background-color": "#ded098" },
-                  ":focus": { "background-color": "#ded098" },
+                  "background-color": "#1f1e1c",
+                  ":hover": { "background-color": "#353330" },
+                  ":focus": { "background-color": "#353330" },
                 },
-                count: {
-                  color: "#171717",
-                  ":hover": { color: "#171717" },
-                },
-                iconPath: { fill: "#171717" },
+                count: { color: "#faf8f5", ":hover": { color: "#faf8f5" } },
+                iconPath: { fill: "#faf8f5" },
               },
             },
           },
@@ -127,5 +129,5 @@ export default function ShopifyEmbed() {
     }
   }, []);
 
-  return <div id="collection-component-1777414814746" />;
+  return <div id="collection-component-1777416653860" />;
 }

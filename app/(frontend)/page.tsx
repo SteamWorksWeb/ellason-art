@@ -30,10 +30,10 @@ function HeroSection() {
           Original Coastal-Inspired Art for Elevated Spaces
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4">
-          <Link href="/shop" className="px-8 py-3.5 bg-transparent border border-white text-white hover:bg-white hover:text-[#0e5492] rounded-md font-medium uppercase tracking-wide text-sm transition-colors">
+          <Link href="/shop" className={`px-8 py-3.5 ${buttonVariants('outline')}`}>
             Shop Collection
           </Link>
-          <Link href="/commissions" className={`px-8 py-3.5 ${buttonVariants()}`}>
+          <Link href="/commissions" className={`px-8 py-3.5 ${buttonVariants('outline')}`}>
             Request a Commission
           </Link>
         </div>
@@ -127,15 +127,15 @@ function AboutPreviewSection() {
 // ─── Commissions CTA ──────────────────────────────────────────────────────────
 function CommissionsSection() {
   return (
-    <section className="bg-brand-blue py-32 px-6 text-center">
+    <section className="bg-[#1f1e1c] py-32 px-6 text-center">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-serif font-light text-cream-100 mb-8">
+        <h2 className="text-4xl lg:text-5xl font-serif font-light text-[#faf8f5] mb-8">
           Bespoke Commissions
         </h2>
-        <p className="text-lg text-blue-100/80 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
+        <p className="text-lg text-[#faf8f5]/70 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
           Looking for a specific dimension or a palette tailored exclusively to your space? We collaborate closely with clients and interior designers to create custom artwork that perfectly anchors a room.
         </p>
-        <Link href="/commissions" className={`px-10 py-4 inline-block ${buttonVariants()}`}>
+        <Link href="/commissions" className={`px-10 py-4 inline-block ${buttonVariants('outline')}`}>
           Begin the Process
         </Link>
       </div>

@@ -20,13 +20,13 @@
 
 const variants = {
   default:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#1f1e1c] text-[#faf8f5] hover:bg-[#333230] hover:text-white rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
   ghost:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#1f1e1c] text-[#faf8f5] hover:bg-[#333230] hover:text-white rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
   outline:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-transparent border border-[#faf8f5] text-[#faf8f5] hover:border-white hover:text-white rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
   secondary:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#1f1e1c] text-[#faf8f5] hover:bg-[#333230] hover:text-white rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
 } as const;
 
 // ─── Helper ───────────────────────────────────────────────────────────────────

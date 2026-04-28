@@ -32,34 +32,34 @@ export default function RootLayout({
       <body className="antialiased min-h-screen flex flex-col font-sans">
         
         {/* Minimal Global Navbar */}
-        <header className="w-full border-b border-cream-300 bg-cream-50/80 backdrop-blur-md sticky top-0 z-50">
+        <header className="w-full border-b border-[#333230] bg-[#1f1e1c] sticky top-0 z-50">
           <div className="max-w-[1536px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
             
             {/* Logo area */}
-            <Link href="/" className="text-2xl font-serif tracking-widest uppercase text-foreground">
+            <Link href="/" className="text-2xl font-serif tracking-widest uppercase text-[#faf8f5]">
               Ellason
             </Link>
 
             {/* Navigation Links */}
-            <nav className="hidden md:flex items-center gap-10 text-sm tracking-[0.15em] uppercase text-neutral-600">
-              <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-              <Link href="/commissions" className="hover:text-foreground transition-colors">Commissions</Link>
-              <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
-              <Link href="/reviews" className="hover:text-foreground transition-colors">Reviews</Link>
-              <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
-              <Link href="/shop" className="hover:text-foreground transition-colors">Shop</Link>
+            <nav className="hidden md:flex items-center gap-10 text-sm tracking-[0.15em] uppercase text-[#faf8f5]/70">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <Link href="/commissions" className="hover:text-white transition-colors">Commissions</Link>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
+              <Link href="/reviews" className="hover:text-white transition-colors">Reviews</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
             </nav>
 
             {/* CTA Button */}
             <div className="flex items-center">
               <Link 
                 href="/commissions#start" 
-                className={`hidden sm:inline-block px-7 py-3 shadow-sm ${buttonVariants()}`}
+                className={`hidden sm:inline-block px-7 py-3 ${buttonVariants('outline')}`}
               >
                 Start a Commission
               </Link>
               {/* Mobile menu icon placeholder */}
-              <button className="md:hidden ml-6 text-foreground">
+              <button className="md:hidden ml-6 text-[#faf8f5]">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M4 8h16M4 16h16"></path></svg>
               </button>
             </div>
@@ -72,7 +72,7 @@ export default function RootLayout({
         </main>
 
         {/* Minimal Global Footer */}
-        <footer className="bg-foreground text-cream-100 py-16 mt-auto">
+        <footer className="bg-[#1f1e1c] text-[#faf8f5] py-16 mt-auto">
           <div className="max-w-[1536px] mx-auto px-6 lg:px-12">
 
             {/* Main footer row */}
@@ -80,34 +80,34 @@ export default function RootLayout({
               
               {/* Brand copy */}
               <div>
-                <h3 className="text-xl font-serif tracking-widest uppercase mb-4">Ellason Art</h3>
-                <p className="text-sm font-light tracking-wide text-sand opacity-80 max-w-sm">
+                <h3 className="text-xl font-serif tracking-widest uppercase mb-4 text-[#faf8f5]">Ellason Art</h3>
+                <p className="text-sm font-light tracking-wide text-[#faf8f5]/60 max-w-sm">
                   Creating coastal, airy, and elevated fine art that brings the serenity of the shoreline into your space.
                 </p>
               </div>
 
               {/* Navigation links */}
-              <div className="flex gap-8 text-xs tracking-[0.2em] uppercase text-sand-dark md:mt-1">
-                <Link href="/" className="hover:text-cream-50 transition-colors">Home</Link>
-                <Link href="/shop" className="hover:text-cream-50 transition-colors">Shop</Link>
-                <Link href="/commissions" className="hover:text-cream-50 transition-colors">Commissions</Link>
-                <Link href="/contact" className="hover:text-cream-50 transition-colors">Contact</Link>
-                <Link href="/instagram" className="hover:text-cream-50 transition-colors">Instagram</Link>
+              <div className="flex gap-8 text-xs tracking-[0.2em] uppercase text-[#faf8f5]/60 md:mt-1">
+                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
+                <Link href="/commissions" className="hover:text-white transition-colors">Commissions</Link>
+                <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+                <Link href="/instagram" className="hover:text-white transition-colors">Instagram</Link>
               </div>
 
               {/* Contact info */}
-              <div className="text-xs tracking-wide text-sand-dark space-y-2 md:text-right">
-                <a href="tel:8139955223" className="block hover:text-cream-50 transition-colors">(813)-995-5223</a>
-                <a href="mailto:info@ellason.art" className="block hover:text-cream-50 transition-colors">info@ellason.art</a>
+              <div className="text-xs tracking-wide text-[#faf8f5]/60 space-y-2 md:text-right">
+                <a href="tel:8139955223" className="block hover:text-white transition-colors">(813)-995-5223</a>
+                <a href="mailto:info@ellason.art" className="block hover:text-white transition-colors">info@ellason.art</a>
               </div>
             </div>
 
             {/* Secondary EA branding row */}
-            <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="mt-12 pt-8 border-t border-[#333230] flex flex-col md:flex-row items-center justify-between gap-6">
               {/* EA Logo — Client Component owns the onError handler */}
               <EaLogo />
 
-              <p className="text-[10px] tracking-widest uppercase text-sand-dark opacity-50">
+              <p className="text-[10px] tracking-widest uppercase text-[#faf8f5]/40">
                 &copy; {new Date().getFullYear()} Ellason Art. All rights reserved.
               </p>
             </div>
