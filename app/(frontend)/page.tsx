@@ -68,10 +68,10 @@ const HeroSection = (props: any) => {
           {dynamicHeroText}
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4">
-          <Link href={btn1Link} className="px-8 py-3.5 bg-cream-50 text-neutral-900 text-xs tracking-widest uppercase hover:bg-white transition-colors shadow-lg rounded-sm">
+          <Link href={btn1Link} className="px-8 py-3.5 bg-transparent border border-white text-white hover:bg-white hover:text-[#0e5492] rounded-md font-medium uppercase tracking-wide text-sm transition-colors">
             {btn1Text}
           </Link>
-          <Link href={btn2Link} className={`px-8 py-3.5 shadow-lg ${buttonVariants()}`}>
+          <Link href={btn2Link} className={`px-8 py-3.5 ${buttonVariants()}`}>
             {btn2Text}
           </Link>
         </div>
@@ -197,7 +197,7 @@ const CommissionsSection = (props: any) => {
         <p className="text-lg text-blue-100/80 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
           {desc}
         </p>
-        <Link href={btnLink} className="inline-block px-10 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md rounded-none">
+        <Link href={btnLink} className={`px-10 py-4 inline-block ${buttonVariants()}`}>
           {btnText}
         </Link>
       </div>

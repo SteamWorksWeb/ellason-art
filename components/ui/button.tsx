@@ -20,13 +20,13 @@
 
 const variants = {
   default:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-sm font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
   ghost:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-sm font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
   outline:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-sm font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
   secondary:
-    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-sm font-medium uppercase tracking-wide text-sm transition-colors',
+    'bg-[#f7e7a9] text-neutral-900 hover:bg-[#e1d297] rounded-md font-medium uppercase tracking-wide text-sm transition-colors',
 } as const;
 
 // ─── Helper ───────────────────────────────────────────────────────────────────

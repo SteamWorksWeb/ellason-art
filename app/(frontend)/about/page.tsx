@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getPayload } from 'payload';
 import configPromise from '../../../payload.config';
 import React from 'react';
+import { buttonVariants } from '@/components/ui/button';
 
 // Extract text helper
 function extractLexicalText(node: any): string {
@@ -112,10 +113,10 @@ const BottomCTASection = (props: any) => {
           {desc}
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Link href={btn1L} className="w-full sm:w-auto px-10 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md focus:outline-none rounded-none">
+          <Link href={btn1L} className="w-full sm:w-auto px-10 py-4 bg-transparent border border-white text-white hover:bg-white hover:text-[#0e5492] rounded-md font-medium uppercase tracking-wide text-sm transition-colors">
             {btn1}
           </Link>
-          <Link href={btn2L} className="w-full sm:w-auto px-10 py-4 bg-butter-yellow hover:bg-butter-yellow-hover text-neutral-900 font-bold text-xs tracking-[0.15em] uppercase transition-colors shadow-md focus:outline-none rounded-none">
+          <Link href={btn2L} className={`w-full sm:w-auto px-10 py-4 ${buttonVariants()}`}>
             {btn2}
           </Link>
         </div>
