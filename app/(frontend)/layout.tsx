@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     siteName: 'Ellason Art',
     images: [
       {
-        url: '/images/favicon/android-chrome-512x512.png',
-        width: 512,
-        height: 512,
+        url: '/images/favicon/social-share.jpg',
+        width: 1200,
+        height: 630,
         alt: 'Ellason Art Portfolio',
       },
     ],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ellason Art',
     description: 'High-end coastal art and custom painting commissions.',
-    images: ['/images/favicon/android-chrome-512x512.png'],
+    images: ['/images/favicon/social-share.jpg'],
   },
 };
 
