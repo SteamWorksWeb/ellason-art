@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { sendContactEmail } from '@/app/actions/contact';
 
 export default function ContactForm(props: any) {
   const leftKicker = props.kicker || 'Studio Location';
@@ -18,16 +19,25 @@ export default function ContactForm(props: any) {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact Inquiry Submitted:', formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+    const result = await sendContactEmail(formData);
+    setIsSubmitting(false);
+    if (result.success) {
+      setIsSubmitted(true);
+    } else {
+      setSubmitError('Something went wrong. Please try again or email us directly.');
+    }
   };
 
   return (
@@ -113,8 +123,15 @@ export default function ContactForm(props: any) {
             </div>
 
             <div className="pt-8">
-              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-[#1f1e1c] hover:bg-[#333230] text-[#faf8f5] font-bold text-xs tracking-[0.15em] uppercase transition-colors focus:outline-none rounded-md">
-                Send Message
+              {submitError && (
+                <p className="text-xs text-red-500 font-medium mb-4">{submitError}</p>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full md:w-auto px-12 py-4 bg-[#1f1e1c] hover:bg-[#333230] text-[#faf8f5] font-bold text-xs tracking-[0.15em] uppercase transition-colors focus:outline-none rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Sending…' : 'Send Message'}
               </button>
             </div>
           </form>
