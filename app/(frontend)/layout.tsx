@@ -89,12 +89,14 @@ export default function RootLayout({
               </div>
 
               {/* Navigation links */}
-              <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-xs tracking-[0.2em] uppercase text-[#faf8f5]/60 md:mt-1">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
-                <Link href="/commissions" className="hover:text-white transition-colors">Commissions</Link>
-                <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-                <Link href="/instagram" className="hover:text-white transition-colors">Instagram</Link>
+              <div className="flex flex-col items-center gap-4 text-xs tracking-[0.2em] uppercase text-[#faf8f5]/60 md:mt-1">
+                <Link href="/"             className="hover:text-white transition-colors">Home</Link>
+                <Link href="/commissions"  className="hover:text-white transition-colors">Commissions</Link>
+                <Link href="/about"        className="hover:text-white transition-colors">About</Link>
+                <Link href="/gallery"      className="hover:text-white transition-colors">Gallery</Link>
+                <Link href="/reviews"      className="hover:text-white transition-colors">Reviews</Link>
+                <Link href="/contact"      className="hover:text-white transition-colors">Contact</Link>
+                <Link href="/shop"         className="hover:text-white transition-colors">Shop</Link>
               </div>
 
               {/* Contact info */}
