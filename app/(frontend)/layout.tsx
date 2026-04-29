@@ -6,6 +6,7 @@ import Image from 'next/image';
 import EaLogo from './EaLogo';
 import { buttonVariants } from '@/components/ui/button';
 import Header from '@/components/Header';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -119,6 +120,7 @@ export default function RootLayout({
           </div>
         </footer>
 
+        <SpeedInsights />
       </body>
     </html>
   );
