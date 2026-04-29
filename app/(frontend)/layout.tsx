@@ -53,6 +53,7 @@ export default function RootLayout({
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <Link href="/commissions" className="hover:text-white transition-colors">Commissions</Link>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
+              <Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link>
               <Link href="/reviews" className="hover:text-white transition-colors">Reviews</Link>
               <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
               <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
