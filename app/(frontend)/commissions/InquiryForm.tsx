@@ -1,8 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { submitCommission } from '@/app/actions/forms';
 
-export default function InquiryForm(props: any) {
+// ─── Inner form (needs reCAPTCHA hook) ────────────────────────────────────────
+
+function InquiryFormInner(props: any) {
   const faqHeadline = props.faqHeadline || 'Frequently Asked';
   const faqDescription = props.faqDescription || 'Every commission is unique, but the journey follows a shared rhythm. Here are a few details to review before submitting an inquiry.';
   const faqs = props.faqs && props.faqs.length > 0 ? props.faqs : [
@@ -12,19 +16,33 @@ export default function InquiryForm(props: any) {
   ];
   const formHeadline = props.formHeadline || 'Start the Conversation';
 
-  const [formData, setFormData] = useState({ name: '', email: '', size: '', budget: '', details: '' });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Commission Inquiry Submitted:', formData);
-    setIsSubmitted(true);
+    setStatus('loading');
+
+    if (!executeRecaptcha) {
+      setErrorMsg('reCAPTCHA not ready. Please try again.');
+      setStatus('error');
+      return;
+    }
+
+    const token = await executeRecaptcha('commission_submit');
+    const formData = new FormData(e.currentTarget);
+    formData.append('token', token);
+
+    const res = await submitCommission(formData);
+
+    if (res.error) {
+      setErrorMsg(res.error);
+      setStatus('error');
+    } else {
+      setStatus('success');
+    }
   };
 
   const toggleFaq = (index: number) => {
@@ -65,7 +83,7 @@ export default function InquiryForm(props: any) {
 
       <div className="w-full lg:w-7/12 bg-[#faf8f5] p-8 md:p-12 lg:p-16 border border-neutral-200 shadow-sm" id="start">
         <h3 className="text-xs tracking-[0.2em] uppercase text-neutral-700 mb-10 font-bold">{formHeadline}</h3>
-        {isSubmitted ? (
+        {status === 'success' ? (
           <div className="bg-[#1f1e1c]/5 border border-[#1f1e1c]/20 p-12 text-center animate-fade-in flex flex-col items-center">
             <svg className="w-10 h-10 text-[#1f1e1c] mb-6 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 13l4 4L19 7"></path></svg>
             <h4 className="font-serif text-3xl font-light text-[#1f1e1c] mb-4">Request Received</h4>
@@ -77,11 +95,11 @@ export default function InquiryForm(props: any) {
           <form onSubmit={handleSubmit} className="flex flex-col space-y-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
               <div className="flex flex-col relative group">
-                <input type="text" name="name" id="name" required value={formData.name} onChange={handleInputChange} className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent" placeholder="Name" />
+                <input type="text" name="name" id="name" required className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent" placeholder="Name" />
                 <label htmlFor="name" className="absolute left-0 top-3 text-sm font-semibold text-neutral-600 cursor-text transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-neutral-800 peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-neutral-800">Full Name</label>
               </div>
               <div className="flex flex-col relative group">
-                <input type="email" name="email" id="email" required value={formData.email} onChange={handleInputChange} className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent" placeholder="Email" />
+                <input type="email" name="email" id="email" required className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent" placeholder="Email" />
                 <label htmlFor="email" className="absolute left-0 top-3 text-sm font-semibold text-neutral-600 cursor-text transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:text-neutral-800 peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-neutral-800">Email Address</label>
               </div>
             </div>
@@ -89,11 +107,11 @@ export default function InquiryForm(props: any) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
               <div className="flex flex-col relative cursor-pointer">
                 <label htmlFor="size" className="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-neutral-800 font-bold">Desired Size</label>
-                <select name="size" id="size" required value={formData.size} onChange={handleInputChange} className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors appearance-none cursor-pointer">
+                <select name="size" id="size" required className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors appearance-none cursor-pointer">
                   <option value="" disabled hidden></option>
-                  <option value="small">Small (up to 24" x 36")</option>
-                  <option value="medium">Medium (up to 36" x 48")</option>
-                  <option value="large">Large (up to 48" x 60")</option>
+                  <option value="small">Small (up to 24&quot; x 36&quot;)</option>
+                  <option value="medium">Medium (up to 36&quot; x 48&quot;)</option>
+                  <option value="large">Large (up to 48&quot; x 60&quot;)</option>
                   <option value="oversized">Oversized / Statement Piece</option>
                 </select>
                 <div className="absolute right-0 top-4 pointer-events-none text-neutral-800"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></div>
@@ -101,7 +119,7 @@ export default function InquiryForm(props: any) {
 
               <div className="flex flex-col relative cursor-pointer">
                 <label htmlFor="budget" className="absolute left-0 -top-4 text-[10px] uppercase tracking-widest text-neutral-800 font-bold">Estimated Budget</label>
-                <select name="budget" id="budget" required value={formData.budget} onChange={handleInputChange} className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors appearance-none cursor-pointer">
+                <select name="budget" id="budget" required className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors appearance-none cursor-pointer">
                   <option value="" disabled hidden></option>
                   <option value="1500-2500">$1,500 - $2,500</option>
                   <option value="2500-5000">$2,500 - $5,000</option>
@@ -112,15 +130,22 @@ export default function InquiryForm(props: any) {
             </div>
 
             <div className="flex flex-col relative pt-2 group">
-              <textarea name="details" id="details" required rows={4} value={formData.details} onChange={handleInputChange} className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent resize-none leading-relaxed" placeholder="Project Details" />
+              <textarea name="details" id="details" required rows={4} className="peer w-full bg-transparent border-b border-neutral-400 py-3 text-sm text-[#1f1e1c] font-medium focus:outline-none focus:border-[#1f1e1c] transition-colors placeholder-transparent resize-none leading-relaxed" placeholder="Project Details" />
               <label htmlFor="details" className="absolute left-0 top-5 text-sm font-semibold text-neutral-600 cursor-text transition-all peer-focus:-top-2 peer-focus:text-[10px] peer-focus:text-neutral-800 peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-2 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-neutral-800">
                 Project Details <span className="opacity-70 normal-case tracking-normal md:tracking-wide font-medium"> (Palette, dimensions, inspiration...)</span>
               </label>
             </div>
 
             <div className="pt-6">
-              <button type="submit" className="w-full md:w-auto px-12 py-4 bg-[#1f1e1c] hover:bg-[#333230] text-[#faf8f5] font-bold text-xs tracking-[0.15em] uppercase transition-colors focus:outline-none rounded-md">
-                Submit Inquiry
+              {status === 'error' && (
+                <p className="text-xs text-red-500 font-medium mb-4">{errorMsg}</p>
+              )}
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full md:w-auto px-12 py-4 bg-[#1f1e1c] hover:bg-[#333230] text-[#faf8f5] font-bold text-xs tracking-[0.15em] uppercase transition-colors focus:outline-none rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {status === 'loading' ? 'Submitting…' : 'Submit Inquiry'}
               </button>
             </div>
           </form>
@@ -129,3 +154,14 @@ export default function InquiryForm(props: any) {
     </section>
   );
 }
+
+// ─── Provider wrapper (default export) ────────────────────────────────────────
+
+export default function InquiryForm(props: any) {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
+      <InquiryFormInner {...props} />
+    </GoogleReCaptchaProvider>
+  );
+}
+

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { submitReview } from '@/app/actions/forms';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -103,16 +104,17 @@ function ReviewCard({ review }: { review: Review }) {
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// ─── Inner Page (needs reCAPTCHA hook) ────────────────────────────────────────
 
-export default function ReviewsPage() {
+function ReviewsPageInner() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [form, setForm] = useState({ name: '', review: '', rating: 0 });
   const [submitting, setSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [reviews, setReviews] = useState<Review[]>(SEED_REVIEWS);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.rating === 0) {
       setErrorMsg('Please select a star rating.');
@@ -122,18 +124,37 @@ export default function ReviewsPage() {
     setSubmitting(true);
     setErrorMsg('');
 
-    // Optimistically add the review to the local list
-    const newReview: Review = {
-      id: String(Date.now()),
-      name: form.name,
-      review: form.review,
-      rating: form.rating,
-      createdAt: new Date().toISOString(),
-    };
-    setReviews((prev) => [newReview, ...prev]);
-    setSubmitStatus('success');
-    setForm({ name: '', review: '', rating: 0 });
+    if (!executeRecaptcha) {
+      setErrorMsg('reCAPTCHA not ready. Please try again.');
+      setSubmitStatus('error');
+      setSubmitting(false);
+      return;
+    }
+
+    const token = await executeRecaptcha('review_submit');
+    const formData = new FormData(e.currentTarget);
+    formData.append('rating', String(form.rating));
+    formData.append('token', token);
+
+    const res = await submitReview(formData);
     setSubmitting(false);
+
+    if (res.error) {
+      setErrorMsg(res.error);
+      setSubmitStatus('error');
+    } else {
+      // Optimistically add review to local list
+      const newReview: Review = {
+        id: String(Date.now()),
+        name: form.name,
+        review: form.review,
+        rating: form.rating,
+        createdAt: new Date().toISOString(),
+      };
+      setReviews((prev) => [newReview, ...prev]);
+      setSubmitStatus('success');
+      setForm({ name: '', review: '', rating: 0 });
+    }
   };
 
   return (
@@ -249,5 +270,15 @@ export default function ReviewsPage() {
       </section>
 
     </div>
+  );
+}
+
+// ─── Provider wrapper (default export) ────────────────────────────────────────
+
+export default function ReviewsPage() {
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
+      <ReviewsPageInner />
+    </GoogleReCaptchaProvider>
   );
 }
