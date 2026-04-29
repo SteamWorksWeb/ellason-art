@@ -24,13 +24,15 @@ export default function GalleryLightbox({ images }: GalleryLightboxProps) {
         {images.map((image, idx) => (
           <div
             key={idx}
-            className="break-inside-avoid relative overflow-hidden rounded-lg cursor-pointer group"
+            className="break-inside-avoid relative overflow-hidden rounded-lg cursor-pointer group aspect-[4/5] min-h-[240px]"
             onClick={() => setIndex(idx)}
           >
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300 block"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
             {/* Subtle hover overlay */}
             <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
