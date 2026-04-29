@@ -20,8 +20,40 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ellason.art'),
   title: 'Ellason Art | Coastal Fine Art & Commissions',
   description: 'High-end coastal art and custom painting commissions.',
+  icons: {
+    icon: '/images/favicon/favicon.ico',
+    shortcut: '/images/favicon/favicon-32x32.png',
+    apple: '/images/favicon/apple-touch-icon.png',
+    other: [
+      { rel: 'icon', type: 'image/png', sizes: '16x16', url: '/images/favicon/favicon-16x16.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', url: '/images/favicon/favicon-32x32.png' },
+    ],
+  },
+  openGraph: {
+    title: 'Ellason Art',
+    description: 'High-end coastal art and custom painting commissions.',
+    url: 'https://ellason.art',
+    siteName: 'Ellason Art',
+    images: [
+      {
+        url: '/images/favicon/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Ellason Art Portfolio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ellason Art',
+    description: 'High-end coastal art and custom painting commissions.',
+    images: ['/images/favicon/android-chrome-512x512.png'],
+  },
 };
 
 export default function RootLayout({
