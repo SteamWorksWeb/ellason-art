@@ -64,14 +64,10 @@ function ProcessTimelineSection() {
 
 // ─── Past Commissions Gallery ─────────────────────────────────────────────────
 const commissionGallery = [
-  { src: '/images/10.jpg',  alt: 'Commission — landscape painting' },
   { src: '/images/1.jpeg',  alt: 'Commission — coastal artwork' },
-  { src: '/images/3.jpeg',  alt: 'Commission — textured piece' },
+  { src: '/images/10.jpg',  alt: 'Commission — landscape painting' },
   { src: '/images/11.jpg',  alt: 'Commission — studio interior' },
-  { src: '/images/4.jpeg',  alt: 'Commission — original artwork' },
-  { src: '/images/7.jpeg',  alt: 'Commission — original artwork' },
-  { src: '/images/8.jpeg',  alt: 'Commission — original artwork' },
-  { src: '/images/9.jpeg',  alt: 'Commission — original artwork' },
+  { src: '/images/3.jpeg',  alt: 'Commission — textured piece' },
 ];
 
 function PastCommissionsGallerySection() {
