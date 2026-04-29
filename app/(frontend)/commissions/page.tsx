@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
 import InquiryForm from './InquiryForm';
+import GalleryLightbox from '@/components/GalleryLightbox';
 
 export const metadata: Metadata = {
   title: 'Commissions | Ellason Art',
@@ -62,11 +63,15 @@ function ProcessTimelineSection() {
 }
 
 // ─── Past Commissions Gallery ─────────────────────────────────────────────────
-const GALLERY = [
-  { src: '/images/10.jpg',  alt: 'Commission — landscape painting', span: 'lg:row-span-2' },
-  { src: '/images/1.jpeg',  alt: 'Commission — coastal artwork',    span: '' },
-  { src: '/images/3.jpeg',  alt: 'Commission — textured piece',     span: '' },
-  { src: '/images/11.jpg',  alt: 'Commission — studio interior',    span: 'md:col-span-2 lg:col-span-2 hidden md:block' },
+const commissionGallery = [
+  { src: '/images/10.jpg',  alt: 'Commission — landscape painting' },
+  { src: '/images/1.jpeg',  alt: 'Commission — coastal artwork' },
+  { src: '/images/3.jpeg',  alt: 'Commission — textured piece' },
+  { src: '/images/11.jpg',  alt: 'Commission — studio interior' },
+  { src: '/images/4.jpeg',  alt: 'Commission — original artwork' },
+  { src: '/images/7.jpeg',  alt: 'Commission — original artwork' },
+  { src: '/images/8.jpeg',  alt: 'Commission — original artwork' },
+  { src: '/images/9.jpeg',  alt: 'Commission — original artwork' },
 ];
 
 function PastCommissionsGallerySection() {
@@ -74,23 +79,14 @@ function PastCommissionsGallerySection() {
     <section className="bg-[#faf8f5] py-32 px-6 border-t border-neutral-200">
       <div className="max-w-[1536px] mx-auto">
         <h3 className="text-base tracking-[0.2em] uppercase text-neutral-700 text-center mb-16 font-bold">Past Commissions</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-[300px] md:auto-rows-[400px]">
-          {GALLERY.map((img, i) => (
-            <div key={i} className={`relative w-full h-full bg-neutral-200 overflow-hidden group ${img.span}`}>
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center transition-transform duration-[3000ms] group-hover:scale-105"
-              />
-            </div>
-          ))}
+        <div className="mt-12">
+          <GalleryLightbox images={commissionGallery} />
         </div>
       </div>
     </section>
   );
 }
+
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function CommissionsPage() {
