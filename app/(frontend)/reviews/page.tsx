@@ -131,8 +131,10 @@ function ReviewsPageInner() {
       return;
     }
 
+    // Capture form element synchronously before any await (event is pooled)
+    const formEl = e.target as HTMLFormElement;
     const token = await executeRecaptcha('review_submit');
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(formEl);
     formData.append('rating', String(form.rating));
     formData.append('token', token);
 

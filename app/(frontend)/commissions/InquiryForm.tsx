@@ -24,6 +24,7 @@ function InquiryFormInner(props: any) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
+    setErrorMsg('');
 
     if (!executeRecaptcha) {
       setErrorMsg('reCAPTCHA not ready. Please try again.');
@@ -31,8 +32,10 @@ function InquiryFormInner(props: any) {
       return;
     }
 
+    // Capture form element synchronously before any await (event is pooled)
+    const form = e.target as HTMLFormElement;
     const token = await executeRecaptcha('commission_submit');
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     formData.append('token', token);
 
     const res = await submitCommission(formData);
