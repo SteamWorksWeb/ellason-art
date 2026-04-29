@@ -78,7 +78,7 @@ export default function RootLayout({
           <div className="max-w-[1536px] mx-auto px-6 lg:px-12">
 
             {/* Main footer row */}
-            <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-8 text-center md:text-left">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10 md:gap-8 text-center md:text-left">
               
               {/* Brand copy */}
               <div>
@@ -89,7 +89,7 @@ export default function RootLayout({
               </div>
 
               {/* Navigation links */}
-              <div className="flex gap-8 text-xs tracking-[0.2em] uppercase text-[#faf8f5]/60 md:mt-1">
+              <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-xs tracking-[0.2em] uppercase text-[#faf8f5]/60 md:mt-1">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
                 <Link href="/commissions" className="hover:text-white transition-colors">Commissions</Link>
