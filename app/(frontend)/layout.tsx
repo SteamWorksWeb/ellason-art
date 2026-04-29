@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import EaLogo from './EaLogo';
 import { buttonVariants } from '@/components/ui/button';
+import Header from '@/components/Header';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -32,48 +33,8 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased min-h-screen flex flex-col font-sans">
         
-        {/* Minimal Global Navbar */}
-        <header className="w-full border-b border-[#333230] bg-[#1f1e1c] sticky top-0 z-50">
-          <div className="max-w-[1536px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-            
-            {/* Logo area */}
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/Logo-ea2-white.png"
-                alt="Ellason Art Secondary Logo"
-                width={150}
-                height={56}
-                className="h-10 w-auto md:h-12 lg:h-14 object-contain"
-                priority
-              />
-            </Link>
-
-            {/* Navigation Links */}
-            <nav className="hidden md:flex items-center gap-10 text-sm tracking-[0.15em] uppercase text-[#faf8f5]/70">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <Link href="/commissions" className="hover:text-white transition-colors">Commissions</Link>
-              <Link href="/about" className="hover:text-white transition-colors">About</Link>
-              <Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link>
-              <Link href="/reviews" className="hover:text-white transition-colors">Reviews</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
-              <Link href="/shop" className="hover:text-white transition-colors">Shop</Link>
-            </nav>
-
-            {/* CTA Button */}
-            <div className="flex items-center">
-              <Link 
-                href="/commissions#start" 
-                className={`hidden sm:inline-block px-7 py-3 ${buttonVariants('outline')}`}
-              >
-                Start a Commission
-              </Link>
-              {/* Mobile menu icon placeholder */}
-              <button className="md:hidden ml-6 text-[#faf8f5]">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M4 8h16M4 16h16"></path></svg>
-              </button>
-            </div>
-          </div>
-        </header>
+        {/* Mobile-interactive Header — lives in its own Client Component */}
+        <Header />
 
         {/* Main Content */}
         <main className="flex-grow flex flex-col">
