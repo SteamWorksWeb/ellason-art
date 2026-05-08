@@ -38,6 +38,13 @@ const SEED_REVIEWS: Review[] = [
     rating: 5,
     createdAt: '2026-01-22T00:00:00Z',
   },
+  {
+    id: '4',
+    name: 'Jessica J.',
+    review: "I have one of Ellason's pieces hanging in my daughter's room. It is stunning in person, and it is a great way to elevate the decor while keeping it teenager approved. I can't wait to get another piece of her artwork to hang in my home.",
+    rating: 5,
+    createdAt: '2026-05-01T00:00:00Z',
+  },
 ];
 
 // ─── Star Rating ──────────────────────────────────────────────────────────────
